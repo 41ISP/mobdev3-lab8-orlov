@@ -4,6 +4,8 @@ const trackList = document.querySelector(".tracks-list")
 async function fetchData() {
     const data = await fetch('https://kitek.ktkv.dev/songs.json')
     const json = await data.json()
+
+   
     for (let i = 0; i< json.length; i++ ) {
         const trackLi = document.createElement("li")
         trackLi.classList.add("track-item")
@@ -46,6 +48,8 @@ async function fetchData() {
 
 
 
+
+
         const trackMeta = document.createElement("div")
         trackMeta.classList.add("track-meta")
         trackLi.appendChild(trackMeta)
@@ -53,13 +57,18 @@ async function fetchData() {
         const duration = document.createElement("div")
         duration.classList.add("duration")
         trackMeta.appendChild(duration)
-        duration.textContent = json[i]
+       
+
 
 
         const popularity = document.createElement("div")
         popularity.classList.add("popularity")
         trackMeta.appendChild(popularity)
-        popularity.textContent = json[i]
+    
+
+      //   const seconds = Math.floor((durationMs % 60000) / 1000)
+          //  .toString()
+        //    .padStart(2, "0");
 
 
       
